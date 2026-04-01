@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyCast — Calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-default">
+    <header class="site-header">
+      <div class="nav-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-icon" aria-hidden="true">⛅</span>
+          SkyCast
+        </a>
+        <nav class="nav-links" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="Future.html" class="active">Future-5</a>
+          <a href="location.html">Location</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">5-day outlook</h1>
+      <div class="panel">
+        <label for="cal-city" class="field-label">City</label>
+        <div class="input-row cal-input-row">
+          <input
+            type="search"
+            id="cal-city"
+            class="field-input"
+            placeholder="Search a city"
+          />
+          <button type="button" class="btn-primary" id="cal-load">Load forecast</button>
+        </div>
+        <p class="message" id="cal-error" role="alert"></p>
+        <p id="cal-city-label" style="margin-bottom: 1rem; font-weight: 600;"></p>
+        <div class="forecast-grid" id="cal-grid"></div>
+      </div>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/calendar.js"></script>
+  </body>
+</html>

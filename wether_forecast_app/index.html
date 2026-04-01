@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyCast — Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-default">
+    <header class="site-header">
+      <div class="nav-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-icon" aria-hidden="true">⛅</span>
+          SkyCast
+        </a>
+        <nav class="nav-links" aria-label="Main">
+          <a href="index.html" class="active">Home</a>
+          <a href="calendar.html">Future-5</a>
+          <a href="location.html">Location</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-home">
+      <section class="home-hero" aria-labelledby="home-heading">
+        <h1 id="home-heading" class="visually-hidden">Weather search</h1>
+        <div class="search-wrap">
+            <label for="city-input">Search city</label>
+            <div class="input-row">
+              <input
+                type="search"
+                id="city-input"
+                name="city"
+                autocomplete="off"
+                placeholder="Delhi , New York , Tokyo....etc"
+                list="search-history-datalist"
+              />
+              <button type="button" class="btn-primary" id="search-btn">
+                Search
+              </button>
+            </div>
+            <datalist id="search-history-datalist"></datalist>
+            <div
+              class="suggestions"
+              id="suggestions"
+              role="listbox"
+              aria-label="Previous searches"
+              hidden
+            ></div>
+          </div>
+
+          <p class="message" id="error-msg" role="alert"></p>
+
+          <div class="weather-main hidden" id="weather-main">
+            <p class="weather-location" id="loc-name"></p>
+            <p class="weather-desc" id="weather-desc"></p>
+            <div class="weather-row">
+              <img
+                class="weather-icon-big"
+                id="weather-icon"
+                alt=""
+                width="140"
+                height="140"
+              />
+              <p class="temp-big" id="temp-main">
+                —<span class="unit">°C</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="stats-grid" id="stats-grid">
+            <div class="stat-item hidden" id="stat-temp">
+              <img
+                class="stat-icon"
+                src="assets/icons/thermometer.svg"
+                alt=""
+                width="36"
+                height="36"
+              />
+              <div class="stat-label">Feels like</div>
+              <div class="stat-value" id="feels-like">—</div>
+            </div>
+            <div class="stat-item hidden" id="stat-humidity">
+              <img
+                class="stat-icon"
+                src="assets/icons/humidity.svg"
+                alt=""
+                width="36"
+                height="36"
+              />
+              <div class="stat-label">Humidity</div>
+              <div class="stat-value" id="humidity">—</div>
+            </div>
+            <div class="stat-item hidden" id="stat-aqi">
+              <img
+                class="stat-icon"
+                src="assets/icons/air.svg"
+                alt=""
+                width="36"
+                height="36"
+              />
+              <div class="stat-label">Air quality (AQI)</div>
+              <div class="stat-value" id="aqi">—</div>
+            </div>
+          </div>
+
+        <p class="hint">
+          Welcome! Check the latest weather updates for your city and stay prepared for the day ahead.
+        </p>
+      </section>
+    </main>
+
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
